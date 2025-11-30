@@ -7,7 +7,7 @@ import { CarBrand } from '@/types/brands';
 import Loader from '@/app/loading';
 
 const Filters: React.FC = () => {
-  //   const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { filters, setFilters, resetPage } = useCarStore();
   const [brand, setBrand] = useState<CarBrand | ''>('');
   const [price, setPrice] = useState('');
@@ -25,6 +25,12 @@ const Filters: React.FC = () => {
   //   }, []);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const handleClickOutside = (e: MouseEvent) => {
       if (
         wrapperRef.current &&
@@ -34,9 +40,10 @@ const Filters: React.FC = () => {
         setOpenPrice(false);
       }
     };
+
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  }, [mounted]);
 
   const brands: CarBrand[] = [
     'Aston Martin',
@@ -85,7 +92,9 @@ const Filters: React.FC = () => {
     }
   };
 
-  //   if (!mounted) return null;
+  if (!mounted) {
+    return <div className={css.filtersWrapper}></div>;
+  }
 
   if (isLoading) return <Loader />;
 
