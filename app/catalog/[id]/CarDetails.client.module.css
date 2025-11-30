@@ -1,0 +1,125 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 72px;
+  padding: 84px 120px 104px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.img {
+  width: 640px;
+  height: 512px;
+  border-radius: 19px;
+  margin-bottom: 40px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 488px;
+  margin-top: 28px;
+}
+
+.titleIdWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.id {
+  color: #8d929a;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+}
+
+.locationLine {
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: currentColor;
+  color: #000;
+}
+
+.location {
+  margin-left: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+}
+
+.mileage {
+  margin-left: 16px;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: #3470ff;
+  margin-bottom: 32px;
+}
+
+.description {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  margin-bottom: 68px;
+}
+
+.listWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.listTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+
+.innerList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}

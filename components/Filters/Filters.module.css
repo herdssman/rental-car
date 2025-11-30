@@ -1,0 +1,193 @@
+.filtersWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 56px;
+}
+
+.legend {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: #8d929a;
+  margin-bottom: 8px;
+}
+
+.input {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  width: 204px;
+  height: 44px;
+  background: #f7f7f7;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #101828;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-left: 2px solid #101828;
+  border-bottom: 2px solid #101828;
+  transform: rotate(315deg);
+  margin-left: 0.5em;
+  transition: transform 0.2s ease;
+  margin-bottom: 4px;
+}
+
+.input.open .arrow {
+  transform: rotate(135deg);
+  margin-bottom: 0;
+}
+
+.filtersWrapper > div {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 14px 18px;
+  margin: 0;
+  width: 100%;
+  max-width: 204px;
+  max-height: 0;
+  overflow: auto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: #8d929a;
+  z-index: 9999;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
+}
+
+.dropdown.open {
+  max-height: 344px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+  background-color: #dadde1;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.dropdown::-webkit-scrollbar-button {
+  display: none;
+}
+
+.items:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.minMileageInput,
+.maxMileageInput {
+  border: none;
+  border-radius: 0 12px 12px 0;
+  padding: 12px 16px;
+  padding: 12px 16px 12px 46px;
+  width: 160px;
+  height: 44px;
+  background: #f7f7f7;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: #101828;
+}
+
+.minMileageInput {
+  border-radius: 12px 0 0 12px;
+  border-right: 1px solid #dadde1;
+  padding: 12px 16px 12px 66px;
+}
+
+.labelFrom,
+.labelTo {
+  position: absolute;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: #101828;
+}
+
+.labelFrom {
+  top: 52%;
+  left: 24px;
+}
+
+.labelTo {
+  top: 26%;
+  left: 24px;
+}
+
+.minMileageInput::-webkit-outer-spin-button,
+.minMileageInput::-webkit-inner-spin-button,
+.maxMileageInput::-webkit-outer-spin-button,
+.maxMileageInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.minMileageInput[type='number'],
+.maxMileageInput[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.minMileageInput::placeholder,
+.maxMileageInput::placeholder {
+  color: #101828;
+}
+
+.input:focus,
+.minMileageInput:focus,
+.maxMileageInput:focus {
+  outline: none;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 51px;
+  width: 156px;
+  height: 44px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  background-color: transparent;
+  margin-bottom: 60px;
+  background-color: #3470ff;
+  transition: all 0.25s ease-out;
+  color: #fff;
+  margin: 0 0 0 16px;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #0b44cd;
+}

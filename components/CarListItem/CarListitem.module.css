@@ -1,0 +1,107 @@
+.item {
+  width: 276px;
+  height: 424px;
+}
+
+.imgWrapper {
+  position: relative;
+  /* width: 276px;
+  height: 268px; */
+  display: inline-block;
+}
+
+.image {
+  border-radius: 14px;
+  width: 276px;
+  height: 268px;
+  display: block;
+  position: relative;
+}
+
+.favouriteBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  z-index: 999;
+}
+
+.iconHeart {
+  width: 16px;
+  height: 16px;
+  stroke: transparent;
+  transition: all 0.15s ease-out;
+}
+
+.iconHeartColoured {
+  width: 16px;
+  height: 16px;
+  fill: #3470ff;
+}
+
+.favouriteBtn:hover .iconHeart {
+  stroke: #3470ff;
+}
+
+.titleWrapper {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  max-width: 240px;
+  color: #101828;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modelSpan {
+  color: #3470ff;
+}
+
+.infoLine {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: #8d929a;
+  margin-bottom: 32px;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 99px;
+  width: 276px;
+  height: 44px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  background-color: #3470ff;
+  margin-bottom: 60px;
+  transition: all 0.25s ease-out;
+  color: #fff;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #0b44cd;
+}
