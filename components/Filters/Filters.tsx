@@ -7,6 +7,7 @@ import { CarBrand } from '@/types/brands';
 import Loader from '@/app/loading';
 
 const Filters: React.FC = () => {
+  //   const [mounted, setMounted] = useState(false);
   const { filters, setFilters, resetPage } = useCarStore();
   const [brand, setBrand] = useState<CarBrand | ''>('');
   const [price, setPrice] = useState('');
@@ -17,6 +18,11 @@ const Filters: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
+
+  //   useEffect(() => {
+  //     useCarStore.persist.rehydrate();
+  //     setMounted(true);
+  //   }, []);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -78,6 +84,8 @@ const Filters: React.FC = () => {
       setIsLoading(false);
     }
   };
+
+  //   if (!mounted) return null;
 
   if (isLoading) return <Loader />;
 

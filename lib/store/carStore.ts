@@ -1,25 +1,6 @@
-// lib/store/carStore.ts
 import { create, StateCreator } from 'zustand';
 import { persist } from 'zustand/middleware';
-
-export interface Car {
-  id: string;
-  brand: string;
-  model: string;
-  year: number;
-  type: string;
-  img: string;
-  description: string;
-  fuelConsumption: string;
-  engineSize: string;
-  accessories: string[];
-  functionalities: string[];
-  rentalPrice: string;
-  rentalCompany: string;
-  address: string;
-  rentalConditions: string[];
-  mileage: number;
-}
+import { Car } from '@/types/car';
 
 export interface FilterState {
   brand: string;
@@ -29,28 +10,20 @@ export interface FilterState {
 }
 
 interface CarStoreState {
-  // Pagination
   page: number;
   hasMore: boolean;
-
-  // Filters state
   filters: FilterState;
-
-  // Favorites
   favorites: string[];
 }
 
 interface CarStoreActions {
-  // Pagination actions
   setPage: (page: number) => void;
   setHasMore: (hasMore: boolean) => void;
 
-  // Filter actions
   setFilters: (filters: FilterState) => void;
   resetFilters: () => void;
   resetPage: () => void;
 
-  // Favorites actions
   addFavorite: (carId: string) => void;
   removeFavorite: (carId: string) => void;
   isFavorite: (carId: string) => boolean;
@@ -69,13 +42,11 @@ const carStoreCreator: StateCreator<
   CarStore,
   [['zustand/persist', unknown]]
 > = (set, get) => ({
-  // State
   page: 1,
   hasMore: true,
   filters: initialFilters,
   favorites: [],
 
-  // Pagination actions
   setPage: (page: number): void => {
     set({ page });
   },
@@ -84,7 +55,6 @@ const carStoreCreator: StateCreator<
     set({ hasMore });
   },
 
-  // Filter actions
   setFilters: (filters: FilterState): void => {
     set({ filters });
   },
@@ -97,7 +67,6 @@ const carStoreCreator: StateCreator<
     set({ page: 1 });
   },
 
-  // Favorites actions
   addFavorite: (carId: string): void => {
     set((state: CarStoreState) => ({
       favorites: [...new Set([...state.favorites, carId])],
@@ -118,6 +87,7 @@ const carStoreCreator: StateCreator<
 
 export const useCarStore = create<CarStore>()(
   persist(carStoreCreator, {
-    name: 'car-store',
+      name: 'car-store',
+      skipHydration: true,
   })
 );

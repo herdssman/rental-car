@@ -1,3 +1,5 @@
+'use client';
+
 import css from './CarListitem.module.css';
 import { Car } from '@/types/car';
 import { useRouter } from 'next/navigation';

@@ -1,8 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚗 Rental Car
 
-## Getting Started
+**Rental Car** is a modern web application for browsing and renting cars.  
+Built with **Next.js**, **React**, **TypeScript**, and **React Query**, it provides a fast, responsive, and user-friendly interface for exploring available vehicles, viewing detailed information, and submitting rental requests.
 
-First, run the development server:
+---
+
+## ✨ Features
+
+- Browse all available cars
+- View detailed information about each car
+- Search and filter cars
+- Booking form for rental requests
+- Add cars to favorites
+- Smooth asynchronous data fetching using React Query
+- Responsive design
+- Toast notifications for errors and actions
+
+---
+
+## 📦 Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/rental-car.git
+cd rental-car
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+### 3. Start the development server
 
 ```bash
 npm run dev
@@ -10,27 +45,53 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open in your browser:  
+👉 http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+/app            # Next.js app router pages
+/components     # Reusable UI components
+/lib/api        # API client functions (Axios)
+/public         # Static assets
+/types          # Typescript interfaces and types
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Built With
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Next.js
+- React
+- TypeScript
+- React Query
+- Axios
+- CSS Modules
+- IziToast
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📚 Useful Resources
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- https://nextjs.org/docs — Next.js Documentation
+- https://tanstack.com/query/latest — React Query Documentation
+- https://www.typescriptlang.org/docs/ — TypeScript Documentation
+
+---
+
+## 🚀 Deployment
+
+You can easily deploy this project using **Vercel**:  
+https://vercel.com/
+
+---
+
+## 👤 Author
+
+**herdssman**  
+GitHub: (https://github.com/herdssman)

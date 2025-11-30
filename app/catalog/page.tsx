@@ -1,8 +1,8 @@
 'use client';
+
 import { useCallback } from 'react';
 import css from './Catalog.module.css';
 import CarList from '@/components/CarList/CarList';
-import Loader from '@/app/loading';
 import Filters from '@/components/Filters/Filters';
 import { useCarStore } from '@/lib/store/carStore';
 
