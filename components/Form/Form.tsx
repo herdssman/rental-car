@@ -45,6 +45,7 @@ const Form = () => {
 
       <div className={css.inputWrapper}>
         <label>
+          <span className={css.visuallyHidden}>Name</span>
           <input
             className={css.input}
             type="text"
@@ -53,9 +54,11 @@ const Form = () => {
             required
             value={form.name}
             onChange={handleChange}
+            aria-required="true"
           />
         </label>
         <label>
+          <span className={css.visuallyHidden}>Email</span>
           <input
             className={css.input}
             type="email"
@@ -64,20 +67,25 @@ const Form = () => {
             required
             value={form.email}
             onChange={handleChange}
+            aria-required="true"
           />
         </label>
-        <div className="date-wrapper">
-          <DatePicker
-            selected={date}
-            onChange={(newDate) => setDate(newDate)}
-            placeholderText="Booking date"
-            className={css.input}
-            calendarClassName={css.calendar}
-            locale="en-GB"
-            formatWeekDay={(n) => n.substring(0, 3).toUpperCase()}
-          />
-        </div>
         <label>
+          <span className={css.visuallyHidden}>Booking date</span>
+          <div className="date-wrapper">
+            <DatePicker
+              selected={date}
+              onChange={(newDate) => setDate(newDate)}
+              placeholderText="Booking date"
+              className={css.input}
+              calendarClassName={css.calendar}
+              locale="en-GB"
+              formatWeekDay={(n) => n.substring(0, 3).toUpperCase()}
+            />
+          </div>
+        </label>
+        <label>
+          <span className={css.visuallyHidden}>Comment</span>
           <textarea
             className={css.textarea}
             name="comment"
@@ -85,6 +93,7 @@ const Form = () => {
             placeholder="Comment"
             value={form.comment}
             onChange={handleChange}
+            aria-label="Additional comments"
           ></textarea>
         </label>
       </div>
