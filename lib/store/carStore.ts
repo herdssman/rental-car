@@ -88,6 +88,5 @@ const carStoreCreator: StateCreator<
 export const useCarStore = create<CarStore>()(
   persist(carStoreCreator, {
       name: 'car-store',
-      skipHydration: true,
   })
 );

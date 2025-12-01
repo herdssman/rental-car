@@ -7,7 +7,6 @@ import { CarBrand } from '@/types/brands';
 import Loader from '@/app/loading';
 
 const Filters: React.FC = () => {
-  const [mounted, setMounted] = useState(false);
   const { filters, setFilters, resetPage } = useCarStore();
   const [brand, setBrand] = useState<CarBrand | ''>('');
   const [price, setPrice] = useState('');
@@ -19,18 +18,7 @@ const Filters: React.FC = () => {
 
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  //   useEffect(() => {
-  //     useCarStore.persist.rehydrate();
-  //     setMounted(true);
-  //   }, []);
-
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
     const handleClickOutside = (e: MouseEvent) => {
       if (
         wrapperRef.current &&
@@ -43,7 +31,7 @@ const Filters: React.FC = () => {
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [mounted]);
+  }, []);
 
   const brands: CarBrand[] = [
     'Aston Martin',
@@ -92,10 +80,6 @@ const Filters: React.FC = () => {
     }
   };
 
-  if (!mounted) {
-    return <div className={css.filtersWrapper}></div>;
-  }
-
   if (isLoading) return <Loader />;
 
   return (
@@ -105,16 +89,23 @@ const Filters: React.FC = () => {
         <button
           className={`${css.input} ${open ? css.open : ''}`}
           type="button"
+          aria-expanded={open}
+          aria-haspopup="listbox"
           onClick={() => setOpen(!open)}
         >
           {brand || 'Choose a brand'}
           <span className={css.arrow}></span>
         </button>
-        <ul className={`${css.dropdown} ${open ? css.open : ''}`}>
+        <ul
+          className={`${css.dropdown} ${open ? css.open : ''}`}
+          role="listbox"
+        >
           {brands.map((b) => (
             <li
               className={css.items}
               key={b}
+              role="option"
+              aria-selected={brand === b}
               onClick={() => {
                 setBrand(b as CarBrand);
                 setOpen(false);
@@ -131,16 +122,23 @@ const Filters: React.FC = () => {
         <button
           className={`${css.input} ${openPrice ? css.open : ''}`}
           type="button"
+          aria-expanded={openPrice}
+          aria-haspopup="listbox"
           onClick={() => setOpenPrice(!openPrice)}
         >
           {price ? `To $${price}` : 'Choose a price'}
           <span className={css.arrow}></span>
         </button>
-        <ul className={`${css.dropdown} ${openPrice ? css.open : ''}`}>
+        <ul
+          className={`${css.dropdown} ${openPrice ? css.open : ''}`}
+          role="listbox"
+        >
           {['30', '40', '50', '60', '70', '80'].map((p) => (
             <li
               className={css.items}
               key={p}
+              role="option"
+              aria-selected={price === p}
               onClick={() => {
                 setPrice(p);
                 setOpenPrice(false);
@@ -161,6 +159,7 @@ const Filters: React.FC = () => {
         <input
           className={css.minMileageInput}
           type="text"
+          id="minMileage"
           value={formatNumber(minMileage)}
           onChange={(e) => {
             const unformatted = unformatNumber(e.target.value);
@@ -181,6 +180,7 @@ const Filters: React.FC = () => {
         <input
           className={css.maxMileageInput}
           type="text"
+          id="maxMileage"
           value={formatNumber(maxMileage)}
           onChange={(e) => {
             const unformatted = unformatNumber(e.target.value);
@@ -194,7 +194,12 @@ const Filters: React.FC = () => {
         />
       </div>
 
-      <button className={css.btn} type="button" onClick={handleSearch}>
+      <button
+        className={css.btn}
+        type="button"
+        onClick={handleSearch}
+        aria-label="Apply filters"
+      >
         Search
       </button>
     </div>

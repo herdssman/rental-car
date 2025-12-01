@@ -84,12 +84,14 @@ const CarList = ({
 
   if (allCars.length === 0 && !isLoading && page === 1) {
     return (
-      <p className={css.noMatches}>No cars found matching your criteria.</p>
+      <p className={css.noMatches} role="status">
+        No cars found matching your criteria.
+      </p>
     );
   }
 
   return (
-    <ul className={css.list}>
+    <ul className={css.list} role="list">
       {allCars.map((c, i) => (
         <CarListItem key={`${c.id}-${i}`} car={c} />
       ))}
