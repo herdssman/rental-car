@@ -30,6 +30,10 @@
   color: #101828;
 }
 
+.items[aria-selected='true'] {
+  color: #101828;
+}
+
 .arrow {
   display: inline-block;
   width: 0.5em;

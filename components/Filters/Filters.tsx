@@ -7,7 +7,7 @@ import { CarBrand } from '@/types/brands';
 import Loader from '@/app/loading';
 
 const Filters: React.FC = () => {
-  const { filters, setFilters, resetFilters, resetPage } = useCarStore();
+  const { setFilters, resetFilters, resetPage } = useCarStore();
   const [brand, setBrand] = useState<CarBrand | ''>('');
   const [price, setPrice] = useState('');
   const [minMileage, setMinMileage] = useState('');
