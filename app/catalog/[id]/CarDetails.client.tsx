@@ -53,7 +53,13 @@ const CarDetailsClient = () => {
   return (
     <div className={css.content}>
       <div className={css.left}>
-        <Image src={car.img} alt="Car Image" className={css.img} />
+        <Image
+          src={car.img}
+          alt={`${car.brand} ${car.model} ${car.year}`}
+          className={css.img}
+          width={640}
+          height={512}
+        />
         <Form />
       </div>
       <div className={css.right}>

@@ -30,6 +30,8 @@ const CarListItem = ({ car }: PageProps) => {
           src={car.img}
           alt={`${car.brand} ${car.model} ${car.year}`}
           className={css.image}
+          width={276}
+          height={268}
         />
         <button
           type="button"
