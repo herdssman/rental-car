@@ -34,8 +34,26 @@ const CarDetailsClient = () => {
     enabled: !!id,
   });
 
+  // useEffect(() => {
+  //   if (error) {
+  //     iziToast.error({
+  //       title: 'Error',
+  //       message:
+  //         'Failed to load the car. Please ensure your connection and try again.',
+  //       position: 'topCenter',
+  //     });
+  //   }
+  // }, [error]);
+
   useEffect(() => {
-    if (error || !car) {
+    if (!car) {
+      iziToast.error({
+        title: 'Error',
+        message:
+          'It seems like it is not one of our cars. Try searching for one in our catalog.',
+        position: 'topCenter',
+      });
+    } else if (error) {
       iziToast.error({
         title: 'Error',
         message:

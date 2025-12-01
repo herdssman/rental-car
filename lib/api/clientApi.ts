@@ -21,6 +21,7 @@ export const getCars = async ({ page, limit, brand, rentalPrice, minMileage, max
         throw new Error('Failed to load cars. Please ensure your connection and try again');
     }
 };
+
 export const getOneCar = async (id: string): Promise<Car> => {
     try {
         const res = await nextServer.get<Car>(`/cars/${id}`)
