@@ -7,10 +7,11 @@ import { usePathname } from 'next/navigation';
 const Header = () => {
   const pathname = usePathname();
   const validRoutes = ['/', '/catalog'];
+  const isIdPage = pathname.startsWith('/catalog');
 
   const isHome = pathname === '/';
   const isCatalog = pathname === '/catalog';
-  const isNotFound = !validRoutes.includes(pathname);
+  const isNotFound = !isIdPage && !validRoutes.includes(pathname);
 
   return (
     !isNotFound && (
