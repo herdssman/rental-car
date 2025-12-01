@@ -43,9 +43,12 @@ const CatalogContent = () => {
   }, [page, isLoading]);
   return (
     <section className={css.catalog}>
-      <Filters />
+      <aside aria-label="Car Filters">
+        <Filters />
+      </aside>
+
       {isLoading && <Loader />}
-      <div ref={carListRef}>
+      <div ref={carListRef} aria-busy={isLoading}>
         <CarList
           page={page}
           limit={12}
@@ -64,6 +67,7 @@ const CatalogContent = () => {
           type="button"
           onClick={handleLoadMore}
           disabled={isLoading}
+          aria-label={isLoading ? 'Loading more cars…' : 'Load more cars'}
         >
           Load more
         </button>

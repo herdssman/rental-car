@@ -75,6 +75,8 @@ const CarDetailsClient = () => {
             height="16"
             viewBox="0 0 16 16"
             fill="none"
+            aria-hidden="true"
+            focusable="false"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -106,6 +108,8 @@ const CarDetailsClient = () => {
                     height="16"
                     viewBox="0 0 16 16"
                     fill="none"
+                    aria-hidden="true"
+                    focusable="false"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -131,6 +135,8 @@ const CarDetailsClient = () => {
                   height="16"
                   viewBox="0 0 16 16"
                   fill="none"
+                  aria-hidden="true"
+                  focusable="false"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -150,6 +156,8 @@ const CarDetailsClient = () => {
                   height="12"
                   viewBox="0 0 16 12"
                   fill="none"
+                  aria-hidden="true"
+                  focusable="false"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -169,6 +177,8 @@ const CarDetailsClient = () => {
                   height="16"
                   viewBox="0 0 16 16"
                   fill="none"
+                  aria-hidden="true"
+                  focusable="false"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -188,6 +198,8 @@ const CarDetailsClient = () => {
                   height="16"
                   viewBox="0 0 16 16"
                   fill="none"
+                  aria-hidden="true"
+                  focusable="false"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -213,6 +225,8 @@ const CarDetailsClient = () => {
                     height="16"
                     viewBox="0 0 16 16"
                     fill="none"
+                    aria-hidden="true"
+                    focusable="false"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -234,6 +248,8 @@ const CarDetailsClient = () => {
                     height="16"
                     viewBox="0 0 16 16"
                     fill="none"
+                    aria-hidden="true"
+                    focusable="false"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path

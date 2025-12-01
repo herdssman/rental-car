@@ -11,11 +11,11 @@ export const getCars = async ({ page, limit, brand, rentalPrice, minMileage, max
         ...(maxMileage && maxMileage.trim() !== '' && { maxMileage: Number(maxMileage) }),
     };
 
-    console.log('API Request params:', params); // Check what's being sent
+    console.log('API Request params:', params); 
 
     try {
         const res = await nextServer.get<AllCars>('/cars', { params });
-        console.log('API Response:', res.data); // Check what comes back
+        console.log('API Response:', res.data); 
         return res.data;
     } catch {
         throw new Error('Failed to load cars. Please ensure your connection and try again');
