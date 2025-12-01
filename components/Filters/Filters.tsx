@@ -7,7 +7,7 @@ import { CarBrand } from '@/types/brands';
 import Loader from '@/app/loading';
 
 const Filters: React.FC = () => {
-  const { filters, setFilters, resetPage } = useCarStore();
+  const { filters, setFilters, resetFilters, resetPage } = useCarStore();
   const [brand, setBrand] = useState<CarBrand | ''>('');
   const [price, setPrice] = useState('');
   const [minMileage, setMinMileage] = useState('');
@@ -32,6 +32,10 @@ const Filters: React.FC = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    resetFilters();
+  }, [resetFilters]);
 
   const brands: CarBrand[] = [
     'Aston Martin',
@@ -65,19 +69,17 @@ const Filters: React.FC = () => {
     return num.replace(/,/g, '');
   };
 
-  const handleSearch = async () => {
-    try {
-      setIsLoading(true);
-      setFilters({
-        brand,
-        rentalPrice: price,
-        minMileage,
-        maxMileage,
-      });
-      resetPage();
-    } finally {
-      setIsLoading(false);
-    }
+  const handleSearch = () => {
+    setIsLoading(true);
+    setFilters({
+      brand,
+      rentalPrice: price,
+      minMileage,
+      maxMileage,
+    });
+    resetPage();
+
+    setIsLoading(false);
   };
 
   if (isLoading) return <Loader />;

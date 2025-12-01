@@ -54,9 +54,10 @@
   transition: border-color 0.25s ease-out;
 }
 
-.date-wrapper {
-  position: relative;
-  width: 100%;
+.hiddenBtn {
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .calendar {
@@ -68,6 +69,10 @@
   animation: slideIn 0.2s ease-out;
 }
 
+.react-datepicker__popper {
+  z-index: 9999 !important;
+}
+
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -77,6 +82,27 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.react-datepicker__popper {
+  z-index: 9999 !important;
+}
+
+.dateWrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.dateWrapper :global(.react-datepicker-wrapper) {
+  width: 100%;
+}
+
+.dateWrapper :global(.react-datepicker__input-container) {
+  position: relative;
+}
+
+.dateWrapper :global(.react-datepicker__popper) {
+  z-index: 11;
 }
 
 .calendar :global(.react-datepicker__header) {

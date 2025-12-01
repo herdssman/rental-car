@@ -26,3 +26,7 @@
 .btn:active {
   border-color: #0b44cd;
 }
+
+.btn:disabled {
+  display: none;
+}

@@ -3,9 +3,10 @@
 import 'react-datepicker/dist/react-datepicker.css';
 import css from './Form.module.css';
 import iziToast from 'izitoast';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import { enGB } from 'date-fns/locale';
+import ReactDatePicker from 'react-datepicker';
 
 registerLocale('en-GB', enGB);
 
@@ -17,11 +18,21 @@ const Form = () => {
     comment: '',
   });
   const [date, setDate] = useState<Date | null>(null);
+  const datePickerRef = useRef<ReactDatePicker>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleDateChange = (newDate: Date | null) => {
+    setDate(newDate);
+    setTimeout(() => {
+      if (datePickerRef.current) {
+        datePickerRef.current.setOpen(false);
+      }
+    }, 0);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -72,15 +83,18 @@ const Form = () => {
         </label>
         <label>
           <span className={css.visuallyHidden}>Booking date</span>
-          <div className="date-wrapper">
+          <div className={css.dateWrapper}>
             <DatePicker
+              ref={datePickerRef}
               selected={date}
-              onChange={(newDate) => setDate(newDate)}
+              onChange={handleDateChange}
               placeholderText="Booking date"
               className={css.input}
               calendarClassName={css.calendar}
               locale="en-GB"
               formatWeekDay={(n) => n.substring(0, 3).toUpperCase()}
+              shouldCloseOnSelect={false}
+              dateFormat="dd/MM/yyyy"
             />
           </div>
         </label>

@@ -1,6 +1,5 @@
 import { create, StateCreator } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { Car } from '@/types/car';
 
 export interface FilterState {
   brand: string;
@@ -87,6 +86,9 @@ const carStoreCreator: StateCreator<
 
 export const useCarStore = create<CarStore>()(
   persist(carStoreCreator, {
-      name: 'car-store',
+    name: 'car-store',
+    partialize: (state) => ({
+      favorites: state.favorites,
+    }),
   })
 );
