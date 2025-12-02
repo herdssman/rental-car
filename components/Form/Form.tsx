@@ -95,6 +95,7 @@ const Form = () => {
               formatWeekDay={(n) => n.substring(0, 3).toUpperCase()}
               shouldCloseOnSelect={false}
               dateFormat="dd/MM/yyyy"
+              minDate={new Date()}
             />
           </div>
         </label>

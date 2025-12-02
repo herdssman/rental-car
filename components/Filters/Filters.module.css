@@ -13,6 +13,10 @@
   margin-bottom: 8px;
 }
 
+.firstInput {
+  margin-left: 16px;
+}
+
 .input {
   border: none;
   border-radius: 12px;

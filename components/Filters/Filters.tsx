@@ -82,11 +82,26 @@ const Filters: React.FC = () => {
     setIsLoading(false);
   };
 
+  const handleReset = () => {
+    setBrand('');
+    setPrice('');
+    setMinMileage('');
+    setMaxMileage('');
+  };
+
   if (isLoading) return <Loader />;
 
   return (
     <div className={css.filtersWrapper} ref={wrapperRef}>
-      <div>
+      <button
+        className={css.btn}
+        type="button"
+        onClick={handleReset}
+        aria-label="Reset filters"
+      >
+        Reset
+      </button>
+      <div className={css.firstInput}>
         <p className={css.legend}>Car brand</p>
         <button
           className={`${css.input} ${open ? css.open : ''}`}
