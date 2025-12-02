@@ -87,6 +87,9 @@ const Filters: React.FC = () => {
     setPrice('');
     setMinMileage('');
     setMaxMileage('');
+
+    resetFilters();
+    resetPage();
   };
 
   if (isLoading) return <Loader />;
@@ -99,7 +102,7 @@ const Filters: React.FC = () => {
         onClick={handleReset}
         aria-label="Reset filters"
       >
-        Reset
+        Reset filters
       </button>
       <div className={css.firstInput}>
         <p className={css.legend}>Car brand</p>
