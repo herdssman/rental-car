@@ -29,55 +29,93 @@ const CarDetails = async ({ params }: PageProps) => {
 
 export default CarDetails;
 
-interface MetadataProps {
-  params: { id: string };
-}
+export const metadata: Metadata = {
+  title: 'Car Rental App',
+  description: 'Take a look at this car',
+  applicationName: 'Car Rental',
+  authors: [{ name: 'herdssman' }],
+  metadataBase: new URL(
+    'https://rental-car-git-main-herdssmans-projects.vercel.app/'
+  ),
+  robots: 'index, follow',
+  themeColor: '#ffffff',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/car-180x180.png',
+  },
+  openGraph: {
+    title: 'Car Rental App',
+    description: 'Take a look at this car',
 
-export async function generateMetadata({
-  params,
-}: MetadataProps): Promise<Metadata> {
-  const car = await getOneCarServer(params.id);
+    url: 'https://rental-car-git-main-herdssmans-projects.vercel.app/',
+    images: [
+      {
+        url: '/public/car-text-logo.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Rental Car App',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+    siteName: 'Rental Car',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Car Rental App',
+    description: 'Take a look at this car',
 
-  const title = `${car.brand} ${car.model} on Car Rental`;
-  const description = `Rent this ${car.brand} ${car.model} in one click`;
+    images: [{ url: '/car-text-logo.jpg', alt: 'Rental Car App' }],
+    creator: '@herdssman',
+  },
+};
 
-  return {
-    title,
-    description,
-    applicationName: 'Car Rental',
-    authors: [{ name: 'herdssman' }],
-    metadataBase: new URL(
-      'https://rental-car-git-main-herdssmans-projects.vercel.app/'
-    ),
-    robots: 'index, follow',
-    themeColor: '#ffffff',
-    icons: {
-      icon: '/favicon.ico',
-      shortcut: '/favicon.ico',
-      apple: '/car-180x180.png',
-    },
-    openGraph: {
-      title,
-      description,
-      url: 'https://rental-car-git-main-herdssmans-projects.vercel.app/',
-      images: [
-        {
-          url: '/car-text-logo.jpg',
-          width: 1200,
-          height: 630,
-          alt: 'Rental Car App',
-        },
-      ],
-      locale: 'en_US',
-      type: 'website',
-      siteName: 'Rental Car',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [{ url: '/car-text-logo.jpg', alt: 'Rental Car App' }],
-      creator: '@herdssman',
-    },
-  };
-}
+// export async function generateMetadata({
+//   params,
+// }: PageProps): Promise<Metadata> {
+//   const car = await getOneCarServer(params.id);
+
+//   const title = `${car.brand} ${car.model} on Car Rental`;
+//   const description = `Rent this ${car.brand} ${car.model} in one click`;
+
+//   return {
+//     title,
+//     description,
+//     applicationName: 'Car Rental',
+//     authors: [{ name: 'herdssman' }],
+//     metadataBase: new URL(
+//       'https://rental-car-git-main-herdssmans-projects.vercel.app/'
+//     ),
+//     robots: 'index, follow',
+//     themeColor: '#ffffff',
+//     icons: {
+//       icon: '/favicon.ico',
+//       shortcut: '/favicon.ico',
+//       apple: '/car-180x180.png',
+//     },
+//     openGraph: {
+//       title,
+//       description,
+//       url: 'https://rental-car-git-main-herdssmans-projects.vercel.app/',
+//       images: [
+//         {
+//           url: '/car-text-logo.jpg',
+//           width: 1200,
+//           height: 630,
+//           alt: 'Rental Car App',
+//         },
+//       ],
+//       locale: 'en_US',
+//       type: 'website',
+//       siteName: 'Rental Car',
+//     },
+//     twitter: {
+//       card: 'summary_large_image',
+//       title,
+//       description,
+//       images: [{ url: '/car-text-logo.jpg', alt: 'Rental Car App' }],
+//       creator: '@herdssman',
+//     },
+//   };
+// }

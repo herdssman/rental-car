@@ -16,10 +16,10 @@ const CarListItem = ({ car }: PageProps) => {
   const isFav = isFavorite(car.id);
 
   const handleFavoriteClick = () => {
-    if (isFav) {
-      removeFavorite(car.id);
-    } else {
+    if (!isFav) {
       addFavorite(car.id);
+    } else {
+      removeFavorite(car.id);
     }
   };
 
