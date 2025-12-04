@@ -8,15 +8,11 @@ const NotFound = () => {
       <div className={css.notFoundWrapper}>
         <h1 className={css.notFoundTitle}>404 - Page Not Found</h1>
         <p className={css.notFoundText}>
-          With our experience you would think we&#39;ve already driven here{' '}
-          <br /> but not yet&#40;
+          With our experience you would think we&#39;d already driven here{' '}
+          <br /> but we haven&#39;t yet&#40;
           <br />
-          <br />
-          <br />
-          <span className={css.notFoundTextOffer}>
-            Meanwhile we offer you to:
-          </span>
         </p>
+        <p className={css.notFoundTextOffer}>Meanwhile we offer you to:</p>
         <NotFoundClient />
       </div>
     </section>

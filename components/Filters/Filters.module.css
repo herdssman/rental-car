@@ -77,7 +77,6 @@
   line-height: 125%;
   color: #8d929a;
   z-index: 9999;
-  cursor: pointer;
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
@@ -87,6 +86,7 @@
   max-height: 344px;
   opacity: 1;
   transform: translateY(0);
+  cursor: pointer;
 }
 
 .dropdown::-webkit-scrollbar {

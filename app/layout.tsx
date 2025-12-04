@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   themeColor: '#ffffff',
   icons: {
     icon: '/favicon.ico',
-    shortcut: '/car-32x32.png',
+    shortcut: '/favicon.ico',
     apple: '/car-180x180.png',
   },
   openGraph: {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     url: 'https://rental-car-git-main-herdssmans-projects.vercel.app/',
     images: [
       {
-        url: '/car.jpg',
+        url: '/public/car-text-logo.jpg',
         width: 1200,
         height: 630,
         alt: 'Rental Car App',

@@ -41,6 +41,7 @@ const CatalogContent = () => {
       }, 50);
     }
   }, [page, isLoading]);
+
   return (
     <section className={css.catalog}>
       <aside aria-label="Car Filters">
