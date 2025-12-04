@@ -7,7 +7,7 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <>
+    <main className={css.main}>
       <section className={css.hero}>
         <h1 className={css.title}>Find your perfect rental car</h1>
         <p className={css.text}>
@@ -21,6 +21,6 @@ export default function Home() {
           View Catalog
         </button>
       </section>
-    </>
+    </main>
   );
 }

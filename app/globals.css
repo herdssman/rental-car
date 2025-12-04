@@ -12,7 +12,9 @@
 }
 
 html {
+  overflow-y: scroll;
   scrollbar-gutter: stable;
+  margin: 0 auto;
 }
 
 body {
@@ -24,6 +26,7 @@ body {
   height: 100dvh;
   box-sizing: content-box;
   scrollbar-gutter: stable;
+  margin: 0 auto;
 }
 
 .container {

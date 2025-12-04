@@ -1,7 +1,7 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
 import css from './Catalog.module.css';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import CarList from '@/components/CarList/CarList';
 import Filters from '@/components/Filters/Filters';
 import { useCarStore } from '@/lib/store/carStore';

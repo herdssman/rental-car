@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Car Rental App',
     description: 'Find the perfect car',
-    images: [{ url: '/car.jpg', alt: 'Rental Car App' }],
+    images: [{ url: '/car-text-logo.jpg', alt: 'Rental Car App' }],
     creator: '@herdssman',
   },
 };
